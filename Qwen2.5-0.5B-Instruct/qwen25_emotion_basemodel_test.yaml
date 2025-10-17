@@ -1,0 +1,24 @@
+### model
+model_name_or_path: /scratch/project_2015499/AC_project/models/Qwen2.5-0.5B-Instruct
+adapter_name_or_path: null
+
+### method
+stage: sft
+do_predict: true  
+# finetuning_type: lora
+
+### dataset
+eval_dataset: emotion_test
+template: qwen
+cutoff_len: 1024
+overwrite_cache: true
+preprocessing_num_workers: 8
+
+### output
+output_dir: /scratch/project_2015499/AC_project/qwen25_emotion_basemodel_test_results
+overwrite_output_dir: true
+
+### predict
+per_device_eval_batch_size: 16  
+predict_with_generate: true
+max_new_tokens: 128  
